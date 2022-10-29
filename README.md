@@ -8,4 +8,4 @@ app features
 * Withdraw funds  
 * Exit (selecting this option should exit the program) 
 
-/home/master/Videos/Screencasts/Screencast from 29.10.2022 10:24:50.webm
+
