@@ -185,16 +185,15 @@ func anotherOption() {
 
 // deposit function: adds the input to the exisiting USD Balance
 func deposit() {
-	fmt.Println("Enter the amount(USD) of money to be deposited")
+	fmt.Println("Enter the amount(USD) of money to be deposited. Enter 0 to perform another action")
 	var amount int
 	_, err := fmt.Scan(&amount)
 
 	if err != nil {
-		if i < 2 {
-			fmt.Println("Error: Please enter the amount of money(USD) in numbers")
-			deposit()
-			i++
-		}
+		fmt.Println("Error: Please enter the amount of money(USD) in numbers")
+		deposit()
+	} else if amount == 0 {
+		anotherOption()
 	}
 	USD = amount + USD
 	fmt.Println("Your account balance is $", USD)
@@ -203,15 +202,14 @@ func deposit() {
 
 // withdraw function: subtracts the input from the exisiting USD Balance
 func withdraw() {
-	fmt.Println("Enter the amount of money(USD) to be withdrawn from your account")
+	fmt.Println("Enter the amount of money(USD) to be withdrawn from your account. Enter 0 to perform another action")
 	var withdrawnAmount int
 	_, err := fmt.Scan(&withdrawnAmount)
 
 	if err != nil {
-		if i < 2 {
-			fmt.Println("Error: Please enter an amount in words")
-			deposit()
-		}
+		fmt.Println("Error: Please enter an amount in words")
+		deposit()
+	} else if withdrawnAmount == 0 {
 		anotherOption()
 	}
 	USD = USD - withdrawnAmount
